@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição Múltipla com Switch</title>
+</head>
+<body>
+    <h1>Verificação de Nota</h1>
+    <div>
+        <input type="number" id="nota" placeholder="Digite a nota">
+        <button onclick="verificarNota()">Verificar</button>
+    </div>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarNota() {
+            var nota = Number(document.getElementById('nota').value);
+            var resultado = document.getElementById('resultado');
+
+            switch (true) {
+                case (nota <= 10 && nota >= 8):
+                    resultado.textContent = 'Excelente';
+                    break;
+                case (nota <= 7 && nota >= 6):
+                    resultado.textContent = 'Bom';
+                    break;
+                case (nota == 5):
+                    resultado.textContent = 'Suficiente';
+                    break;
+                case (nota < 5):
+                    resultado.textContent = 'Reprovado';
+                    break;
+                default:
+                    resultado.textContent = 'Valor incorreto';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
